@@ -8,8 +8,8 @@ class Album {
     this.title,
   });
 
-  final String id;
-  final String userId;
+  final int id;
+  final int userId;
   final String title;
 
   factory Album.fromJson(Map<String, dynamic> json) => _$AlbumFromJson(json);

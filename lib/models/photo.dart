@@ -10,7 +10,7 @@ class Photo {
     this.thumbnailUrl,
   });
 
-  final String id;
+  final int id;
   final String albumId;
   final String title;
   final String url;

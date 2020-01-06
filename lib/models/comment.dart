@@ -10,8 +10,8 @@ class Comment {
     this.body,
   });
 
-  final String id;
-  final String postId;
+  final int id;
+  final int postId;
   final String name;
   final String email;
   final String body;

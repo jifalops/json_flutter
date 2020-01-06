@@ -13,7 +13,7 @@ class User {
     this.company,
   });
 
-  final String id;
+  final int id;
   final String name;
   final String username;
   final String email;
@@ -45,6 +45,9 @@ class Address {
   factory Address.fromJson(Map<String, dynamic> json) =>
       _$AddressFromJson(json);
   Map<String, dynamic> toJson() => _$AddressToJson(this);
+
+  @override
+  String toString() => '$street $suite. $city, $zipcode';
 }
 
 @JsonSerializable()
@@ -54,11 +57,17 @@ class LatLng {
     this.lng,
   });
 
+  @JsonKey(fromJson: double.tryParse)
   final double lat;
+
+  @JsonKey(fromJson: double.tryParse)
   final double lng;
 
   factory LatLng.fromJson(Map<String, dynamic> json) => _$LatLngFromJson(json);
   Map<String, dynamic> toJson() => _$LatLngToJson(this);
+
+  @override
+  String toString() => '[$lat, $lng]';
 }
 
 @JsonSerializable()
@@ -76,4 +85,7 @@ class Company {
   factory Company.fromJson(Map<String, dynamic> json) =>
       _$CompanyFromJson(json);
   Map<String, dynamic> toJson() => _$CompanyToJson(this);
+
+  @override
+  String toString() => name;
 }

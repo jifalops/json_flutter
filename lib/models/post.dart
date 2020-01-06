@@ -9,8 +9,8 @@ class Post {
     this.body,
   });
 
-  final String id;
-  final String userId;
+  final int id;
+  final int userId;
   final String title;
   final String body;
 

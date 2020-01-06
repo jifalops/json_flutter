@@ -8,8 +8,8 @@ part of models;
 
 Album _$AlbumFromJson(Map<String, dynamic> json) {
   return Album(
-    id: json['id'] as String,
-    userId: json['userId'] as String,
+    id: json['id'] as int,
+    userId: json['userId'] as int,
     title: json['title'] as String,
   );
 }
@@ -22,8 +22,8 @@ Map<String, dynamic> _$AlbumToJson(Album instance) => <String, dynamic>{
 
 Comment _$CommentFromJson(Map<String, dynamic> json) {
   return Comment(
-    id: json['id'] as String,
-    postId: json['postId'] as String,
+    id: json['id'] as int,
+    postId: json['postId'] as int,
     name: json['name'] as String,
     email: json['email'] as String,
     body: json['body'] as String,
@@ -40,7 +40,7 @@ Map<String, dynamic> _$CommentToJson(Comment instance) => <String, dynamic>{
 
 Photo _$PhotoFromJson(Map<String, dynamic> json) {
   return Photo(
-    id: json['id'] as String,
+    id: json['id'] as int,
     albumId: json['albumId'] as String,
     title: json['title'] as String,
     url: json['url'] as String,
@@ -58,8 +58,8 @@ Map<String, dynamic> _$PhotoToJson(Photo instance) => <String, dynamic>{
 
 Post _$PostFromJson(Map<String, dynamic> json) {
   return Post(
-    id: json['id'] as String,
-    userId: json['userId'] as String,
+    id: json['id'] as int,
+    userId: json['userId'] as int,
     title: json['title'] as String,
     body: json['body'] as String,
   );
@@ -74,8 +74,8 @@ Map<String, dynamic> _$PostToJson(Post instance) => <String, dynamic>{
 
 ToDo _$ToDoFromJson(Map<String, dynamic> json) {
   return ToDo(
-    id: json['id'] as String,
-    userId: json['userId'] as String,
+    id: json['id'] as int,
+    userId: json['userId'] as int,
     title: json['title'] as String,
     completed: json['completed'] as bool,
   );
@@ -90,7 +90,7 @@ Map<String, dynamic> _$ToDoToJson(ToDo instance) => <String, dynamic>{
 
 User _$UserFromJson(Map<String, dynamic> json) {
   return User(
-    id: json['id'] as String,
+    id: json['id'] as int,
     name: json['name'] as String,
     username: json['username'] as String,
     email: json['email'] as String,
@@ -138,8 +138,8 @@ Map<String, dynamic> _$AddressToJson(Address instance) => <String, dynamic>{
 
 LatLng _$LatLngFromJson(Map<String, dynamic> json) {
   return LatLng(
-    lat: (json['lat'] as num)?.toDouble(),
-    lng: (json['lng'] as num)?.toDouble(),
+    lat: double.tryParse(json['lat'] as String),
+    lng: double.tryParse(json['lng'] as String),
   );
 }
 
