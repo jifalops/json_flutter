@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:json_example/controllers/user_controller.dart';
 import 'package:json_example/models/_models.dart';
 import 'package:json_example/views/components/user_listitem.dart';
 import 'package:provider/provider.dart';
+
+import '../../controllers/controller.dart';
 
 class UsersScreen extends StatelessWidget {
   @override
@@ -12,7 +13,7 @@ class UsersScreen extends StatelessWidget {
         title: Text('Select a user'),
       ),
       body: FutureProvider.value(
-        value: UserController().getUsers(),
+        value: Controller.getUsers(),
         child: _Body(),
       ),
     );
